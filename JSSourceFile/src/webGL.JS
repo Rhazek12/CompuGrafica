@@ -6,7 +6,7 @@ function initializeGL() {
     gGL = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
    
     if (gGL !== null) {
-        gGL.clearColor( 0.5, 0.8, 0.6, 1.0); // set the color to be cleared
+        gGL.clearColor( 0.8, 0.5, 0.6, 1.0); // set the color to be cleared
    
         // A. initialize the vertex buffer
         initSquareBuffer(); // This function is defined VertexBuffer.js

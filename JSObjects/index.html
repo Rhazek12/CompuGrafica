@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body onload="new MyGame('GLCanvas');">
+
+        <script type="x-shader/x-vertex" id="VertexShader">
+            // this is the vertex shader 
+            attribute vec3 aSquareVertexPosition;  // Vertex shader expects one vertex position
+            void main(void) {
+            // Convert the vec3 into vec4 for scan conversion and
+            // assign to gl_Position to pass the vertex to the fragment shader
+            gl_Position = vec4(aSquareVertexPosition, 1.0); 
+            }
+            // End of vertex shader
+        </script>
+
+        <script type="x-shader/x-fragment" id="FragmentShader">
+            // this is the fragment (or pixel) shader
+            void main(void) {
+            // for every pixel called (within the square) sets
+            // constant color white with alpha-channel value of 1.0
+            gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+            }
+            // End of fragment/pixel shader
+        </script>   
+        <script type="text/javascript" src="src/Engine/Engine_Core.js"></script>
+        <script type="text/javascript" src="src/Engine/Engine_VertexBuffer.js"></script>
+        <script type="text/javascript" src="src/Engine/SimpleShader.js"></script>
+
+        <script type="text/javascript" src="src/MyGame/MyGame.js"></script>
+
+
+
+        <canvas id="GLCanvas" width="640" height="480">
+            Your browser does not support the HTML5 canvas.
+        </canvas>
+    </body>
+</html>
